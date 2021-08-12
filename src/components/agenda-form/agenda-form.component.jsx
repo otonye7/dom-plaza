@@ -1,16 +1,19 @@
-import React from 'react';
+
 import { AgendaFormContainer } from './agenda-form.styles';
 import TextField from '@material-ui/core/TextField';
 
-
-
-const AgendaForm = () => {
+const AgendaForm = ({handleTask, handleDate, handleTime}) => {
 
   return (
     <AgendaFormContainer>
        <form  noValidate autoComplete="off">
         <div className='form-container'>
-         <TextField label="Task" id="standard-size-normal" className='task' />
+         <TextField
+          label="Task"
+          id="standard-size-normal"
+          className='task' 
+          onChange={handleTask}
+         />
           <br />
           <br />
           <TextField
@@ -18,17 +21,20 @@ const AgendaForm = () => {
              label="Date"
              type="date"
              className="date"
+             onChange={handleDate}
              InputLabelProps={{
              shrink: true,
           }}
          />
         <br />
         <br />
+        
         <TextField
           id="time"
           label="Time"
           type="time"
           className="time"
+          onChange={handleTime}
           InputLabelProps={{
             shrink: true,
           }}
