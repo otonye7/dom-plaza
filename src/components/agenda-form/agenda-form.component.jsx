@@ -2,11 +2,11 @@ import { AgendaFormContainer } from './agenda-form.styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '../buttons/buttons.component';
 
-const AgendaForm = ({handleTask, handleDate, handleTime}) => {
+const AgendaForm = ({handleTask, handleDate, handleTime, handleSubmit}) => {
 
   return (
     <AgendaFormContainer>
-       <form  noValidate autoComplete="off">
+       <form onSubmit={handleSubmit} noValidate autoComplete="off">
         <div className='form-container'>
          <TextField
           label="Task"
