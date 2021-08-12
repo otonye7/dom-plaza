@@ -1,6 +1,6 @@
-
 import { AgendaFormContainer } from './agenda-form.styles';
 import TextField from '@material-ui/core/TextField';
+import Button from '../buttons/buttons.component';
 
 const AgendaForm = ({handleTask, handleDate, handleTime}) => {
 
@@ -43,11 +43,11 @@ const AgendaForm = ({handleTask, handleDate, handleTime}) => {
           }}
          />
         </div>
-        <div className='button-container'>
-          {/* <div className='btn'>
-            <Button className='btn'>Login</Button>
-          </div> */}
-        </div>
+         <br />
+         <br />
+          <div className='btn'>
+            <Button className='btn'>ADD AGENDA</Button>
+          </div> 
       </form>
     </AgendaFormContainer>
       
