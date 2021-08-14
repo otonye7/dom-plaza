@@ -38,8 +38,14 @@ const loadAgenda = async () => {
 const handleSubmit = async (e) => {
   e.preventDefault()
   try {
-     let res = await axios.put(`http://localhost:8000/api/edit-agenda/${_id}`)
-     console.log( res)
+     let res = await axios.put(`http://localhost:8000/api/edit-agenda/${_id}`, {
+       task,
+       dateValue,
+       time
+     })
+     setTimeout(() => {
+      window.location.reload()
+  }, 1000)
   }
   catch (err) {
       console.log(err)
