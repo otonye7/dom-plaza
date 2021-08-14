@@ -2,6 +2,7 @@ import { AgendaFormContainer } from './agenda-form.styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '../buttons/buttons.component';
 
+
 const AgendaForm = ({handleTask, handleDate, handleTime, handleSubmit}) => {
 
   return (
@@ -42,6 +43,7 @@ const AgendaForm = ({handleTask, handleDate, handleTime, handleSubmit}) => {
             step: 300, // 5 min
           }}
          />
+         <br />
         </div>
          <br />
          <br />
