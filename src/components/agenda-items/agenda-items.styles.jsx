@@ -4,6 +4,11 @@ import styled from 'styled-components';
 export const AgendaItemsContainer = styled.div`
    width: 100%;
 
+   .ag-container {
+      width: 50%;
+      margin: 0 auto
+   }
+
    .preview {
     font-size: 18px;
     font-family: Jura;

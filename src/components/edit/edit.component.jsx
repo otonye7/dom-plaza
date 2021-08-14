@@ -1,12 +1,52 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { AgendaContainer } from './edit.styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '../buttons/buttons.component';
-// import axios from 'axios';
+import { withRouter } from "react-router";
+import axios from 'axios';
 // // import { ToastContainer, toast } from 'react-toastify';
 
-const Edit = ({handleChange, handleSubmit, tasks}) => {
-    const {task, dateValue, time} = tasks;
+const Edit = ({_id, match}) => {
+  // const [task, setTasks] = useState('')
+  // const [dateValue, setDateValues] = useState('')
+  // const [time, setTimes] = useState('')
+  const [values, setValues] = useState({
+    task: '',
+    dateValue: '',
+    time: ''
+  })
+
+  const {task, dateValue, time} = values
+
+  useEffect(() => {
+    loadAgenda()
+}, [])
+  
+const loadAgenda = async () => {
+  let res = await axios.get(`http://localhost:8000/api/get-agenda/${_id}`)
+  setValues({...values, ...res.data})
+}
+
+
+  const handleChange = (e) => {
+    setValues({...values, [e.target.name]: e.target.value})
+  }
+
+
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault()
+  try {
+     let res = await axios.put(`http://localhost:8000/api/edit-agenda/${_id}`)
+     console.log( res)
+  }
+  catch (err) {
+      console.log(err)
+  }
+  
+}
+    
 
     return (
     <AgendaContainer>
@@ -16,6 +56,7 @@ const Edit = ({handleChange, handleSubmit, tasks}) => {
           label="Task"
           id="standard-size-normal"
           className='task'
+          name='task'
           value={task} 
           onChange={handleChange}
          />
@@ -26,6 +67,7 @@ const Edit = ({handleChange, handleSubmit, tasks}) => {
              label="Date"
              type="date"
              className="date"
+             name='dateValue'
              value={dateValue} 
              onChange={handleChange}
              InputLabelProps={{
@@ -40,6 +82,7 @@ const Edit = ({handleChange, handleSubmit, tasks}) => {
           label="Time"
           type="time"
           className="time"
+          name='time'
           value={time}
           onChange={handleChange}
           InputLabelProps={{
@@ -55,10 +98,9 @@ const Edit = ({handleChange, handleSubmit, tasks}) => {
           <div className='btn'>
             <Button className='btn'>Edit AGENDA</Button>
           </div> 
-      </form>
-      <pre>{JSON.stringify(tasks, null, 4)}</pre>
+      </form>  
      </AgendaContainer>
     )
 }
 
-export default Edit;
+export default withRouter(Edit);
