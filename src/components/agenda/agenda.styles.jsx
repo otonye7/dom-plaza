@@ -15,7 +15,7 @@ export const AgendaContainer = styled.div`
     font-family: Jura;
     font-style: normal;
     font-weight: 400;
-    color: #262626;
+    color: black;
     line-height: 1.5;
    } 
 `;
