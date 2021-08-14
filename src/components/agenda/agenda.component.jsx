@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 const Agenda = () => {
 
     const current = new Date();
-    const date = `${current.getMonth()+1}/${current.getDate()}/${current.getFullYear()}`;
+    // const date = `${current.getMonth()+1}/${current.getDate()}/${current.getFullYear()}`;
     const [task, setTask] = useState('')
     const [dateValue, setDate] = useState('')
     const [time, setTime] = useState('')
@@ -41,6 +41,9 @@ const Agenda = () => {
                 dateValue,
                 time
             })
+            setTimeout(() => {
+                window.location.reload()
+            }, 1000)
         }
         catch (err) {
             console.log(err)

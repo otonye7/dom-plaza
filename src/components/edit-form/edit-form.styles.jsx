@@ -22,4 +22,8 @@ export const AgendaFormContainer = styled.div`
        width: 100%;
    }
 
+  /* .btn {
+      display: flex;
+      justify-content: center;
+  } */
 `;
