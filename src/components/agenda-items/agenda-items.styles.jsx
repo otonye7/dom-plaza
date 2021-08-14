@@ -6,7 +6,12 @@ export const AgendaItemsContainer = styled.div`
 
    .ag-container {
       width: 50%;
-      margin: 0 auto
+      margin: 0 auto;
+
+   @media screen and (max-width: 800px){
+      width: 90%;
+      margin: 0 auto;
+  }
    }
 
    .preview {
@@ -41,10 +46,14 @@ export const AgendaItemsContainer = styled.div`
     padding-left: 0.8rem;
    }
 
+   .card {
+      background-color: #71AFAE;
+   }
+
    .icons {
       display:flex;
       justify-content: space-between;
-      width: 40%;
+      width: 97%;
       margin: 0 auto;
    }
 
@@ -57,7 +66,9 @@ export const AgendaItemsContainer = styled.div`
    }
 
    .items {
+      width: 98%;
+      margin: 0 auto;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
    }
 `;

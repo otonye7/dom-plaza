@@ -5,8 +5,13 @@ export const AgendaContainer = styled.div`
    width: 100%;
 
    .container {
-       width: 85%;
+       width: 50%;
        margin: 0 auto;
+
+   @media screen and (max-width: 800px){
+      width: 90%;
+      margin: 0 auto;
+    }
    }
 
    .agenda-text {
@@ -18,4 +23,5 @@ export const AgendaContainer = styled.div`
     color: black;
     line-height: 1.5;
    } 
+
 `;

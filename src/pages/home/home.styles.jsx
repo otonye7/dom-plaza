@@ -7,5 +7,10 @@ export const HomeContainer = styled.div`
    .home-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
+ @media screen and (max-width: 800px){
+      display: grid;
+      grid-template-columns: 1fr;
+  }
    }
 `;

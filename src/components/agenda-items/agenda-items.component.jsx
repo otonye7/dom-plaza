@@ -29,7 +29,7 @@ const AgendaItems = ({agenda, match}) => {
     return (
         <AgendaItemsContainer>
             <div className='ag-container'>
-            <Card  variant="outlined">
+            <Card className='card' variant="outlined">
                <div className='items'>
                      <h4 className='task'>{task}</h4>  
                     <h4 className='preview'>{dateValue}</h4>
