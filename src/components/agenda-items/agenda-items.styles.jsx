@@ -36,6 +36,21 @@ export const AgendaItemsContainer = styled.div`
     padding-left: 0.8rem;
    }
 
+   .icons {
+      display:flex;
+      justify-content: space-between;
+      width: 40%;
+      margin: 0 auto;
+   }
+
+   .delete {
+      color: red;
+   }
+
+   .edit {
+      color: blue;
+   }
+
    .items {
       display: flex;
       justify-content: center;
