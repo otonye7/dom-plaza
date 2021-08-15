@@ -4,12 +4,11 @@ import TextField from '@material-ui/core/TextField';
 import Button from '../buttons/buttons.component';
 import { withRouter } from "react-router";
 import axios from 'axios';
-// // import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Edit = ({_id, match}) => {
-  // const [task, setTasks] = useState('')
-  // const [dateValue, setDateValues] = useState('')
-  // const [time, setTimes] = useState('')
+
   const [values, setValues] = useState({
     task: '',
     dateValue: '',
@@ -43,6 +42,7 @@ const handleSubmit = async (e) => {
        dateValue,
        time
      })
+     toast.success('Successful')
      setTimeout(() => {
       window.location.reload()
   }, 1000)
@@ -57,11 +57,12 @@ const handleSubmit = async (e) => {
     return (
     <AgendaContainer>
         <form onSubmit={handleSubmit} noValidate autoComplete="off">
+        <ToastContainer position="top-center" />
         <div className='form-container'>
          <TextField
           label="Task"
           id="standard-size-normal"
-          className='task'
+          className='inputs'
           name='task'
           value={task} 
           onChange={handleChange}
@@ -72,7 +73,7 @@ const handleSubmit = async (e) => {
              id="date"
              label="Date"
              type="date"
-             className="date"
+             className="inputs"
              name='dateValue'
              value={dateValue} 
              onChange={handleChange}
@@ -87,7 +88,7 @@ const handleSubmit = async (e) => {
           id="time"
           label="Time"
           type="time"
-          className="time"
+          className="inputs"
           name='time'
           value={time}
           onChange={handleChange}

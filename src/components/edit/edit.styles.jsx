@@ -12,6 +12,11 @@ export const AgendaContainer = styled.div`
     width: 98%;
 }
 
+.inputs {
+    width: 100%;
+    padding-top: 0.5rem;
+}
+
 
 .task {
     width: 98%;

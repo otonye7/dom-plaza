@@ -3,6 +3,7 @@ import { AgendaContainer } from './agenda.styles';
 import AgendaForm from '../agenda-form/agenda-form.component';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Agenda = () => {
 
@@ -41,12 +42,13 @@ const Agenda = () => {
                 dateValue,
                 time
             })
+            toast.success('Successful')
             setTimeout(() => {
                 window.location.reload()
             }, 1000)
         }
         catch (err) {
-            console.log(err)
+            if (err.response.status === 400) toast.error(err.response.data)
         }
     }
 
@@ -54,7 +56,7 @@ const Agenda = () => {
     <AgendaContainer>
         <div className='container'>
             <h2 className='agenda-text'>What Are Your Agenda For Today ?</h2>
-            <ToastContainer />
+            <ToastContainer position="top-center" />
             <AgendaForm 
              handleTask={handleTask}
              handleDate={handleDate}

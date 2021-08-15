@@ -8,10 +8,11 @@ import ParticlesBg from 'particles-bg';
 const Home = () => {
     return (
     <HomeContainer>
-        <ParticlesBg type="circle" num={200} bg={true} />
         <div className='home-container'>
+        <ParticlesBg type="circle" num={200} bg={true} />
             <Agenda />
             <Display />
+        <ParticlesBg type="circle" num={200} bg={true} />
         </div>
     </HomeContainer>
     )
